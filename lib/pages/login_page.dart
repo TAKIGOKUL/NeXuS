@@ -73,7 +73,10 @@ class LoginPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
-                  child: const Text('Sign in'),
+                  child: const Text(
+                    'Sign in',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
                 const SizedBox(height: 16),
                 const Text('Create new account'),

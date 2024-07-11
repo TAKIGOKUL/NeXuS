@@ -136,7 +136,7 @@ class PostInputField extends StatelessWidget {
             const Row(
               children: [
                 CircleAvatar(
-                  backgroundImage: AssetImage('assets/eren.png'),
+                  backgroundImage: AssetImage('assets/eren.jpeg'),
                 ),
                 SizedBox(width: 8),
                 Expanded(
@@ -157,7 +157,11 @@ class PostInputField extends StatelessWidget {
                     style: TextStyle(color: Colors.grey)),
                 ElevatedButton(
                   onPressed: () {},
-                  child: const Text('Publish Post'),
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                  child: const Text(
+                    'Publish Post',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ],
             ),
