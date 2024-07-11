@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nexus/pages/feed_section.dart';
 import 'package:nexus/pages/login_page.dart'; // Import the feed section page
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LoginPage(), // Use the feed section page as the home screen
+      home: const FeedSection(), // Use the feed section page as the home screen
     );
   }
 }
