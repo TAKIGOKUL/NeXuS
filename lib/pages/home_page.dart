@@ -17,18 +17,21 @@ class HomePage extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 30,
-                  backgroundImage: AssetImage(
-                      'assets/eren.jpeg'), // Add your image to assets and update path
+                  backgroundImage: AssetImage('assets/eren.jpeg'),
                 ),
                 SizedBox(width: 10),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Eren Yeager',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold)),
-                    Text('CEA Student',
-                        style: TextStyle(fontSize: 16, color: Colors.grey)),
+                    Text(
+                      'Eren Yeager',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      'CEA Student',
+                      style: TextStyle(fontSize: 16, color: Colors.grey),
+                    ),
                   ],
                 ),
                 Spacer(),
@@ -42,8 +45,9 @@ class HomePage extends StatelessWidget {
               decoration: InputDecoration(
                 hintText: 'Search for projects...',
                 prefixIcon: const Icon(Icons.search),
-                border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
               ),
             ),
           ),
@@ -52,7 +56,12 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Chip(label: Text('Projects')),
-              Chip(label: Text('Events', style: TextStyle(color: Colors.blue))),
+              Chip(
+                label: Text(
+                  'Events',
+                  style: TextStyle(color: Colors.blue),
+                ),
+              ),
               Chip(label: Text('Hackathons')),
               Chip(label: Text('Creative')),
             ],
@@ -71,17 +80,21 @@ class HomePage extends StatelessWidget {
                           'assets/wildlife.jpeg',
                           height: 400,
                         ),
-                      ), // Add your image to assets and update path
-                      const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text('Wildlife Bootcamp',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold)),
                       ),
                       const Padding(
                         padding: EdgeInsets.all(8.0),
-                        child: Text('Exploring in the wild with IEDC ...',
-                            style: TextStyle(color: Colors.grey)),
+                        child: Text(
+                          'Wildlife Bootcamp',
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          'Exploring in the wild with IEDC ...',
+                          style: TextStyle(color: Colors.grey),
+                        ),
                       ),
                     ],
                   ),

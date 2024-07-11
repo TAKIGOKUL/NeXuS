@@ -84,7 +84,8 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     IconButton(
-                      icon: const Icon(Icons.mail), // Google Plus icon
+                      icon: const Icon(Icons
+                          .mail), // Google icon but i didn't got it so used mail
                       iconSize: 30,
                       onPressed: () {},
                     ),
