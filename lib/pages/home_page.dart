@@ -141,7 +141,7 @@ class HomeScreen extends StatelessWidget {
                     const Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
-                        'Exploring in with IEDC ...',
+                        'Exploring enterpreneurship with IEDC ...',
                         style: TextStyle(color: Colors.grey),
                       ),
                     ),
