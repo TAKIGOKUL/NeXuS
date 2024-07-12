@@ -66,6 +66,9 @@ flutter:
     - assets/spirituality.jpg
     - assets/codology.png
     - assets/banner.png
+    - assets/image2.jpeg
+    - assets/image3.jpeg
+    - assets/image4.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
