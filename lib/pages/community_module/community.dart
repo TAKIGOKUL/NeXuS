@@ -36,95 +36,86 @@ class _CommunityPageState extends State<CommunityPage>
           },
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                children: [
-                  Image.asset('assets/banner.png', fit: BoxFit.cover),
-                  const SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Codology',
-                            style: TextStyle(
-                                fontSize: 24, fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(height: 4),
-                          Row(
-                            children: [
-                              Icon(Icons.star, color: Colors.yellow),
-                              SizedBox(width: 4),
-                              Text('4.3 (10K+ members)'),
-                            ],
-                          ),
-                        ],
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const JoinCommunityPage()),
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue),
-                        child: const Text(
-                          'Join Community',
-                          style: TextStyle(color: Colors.white),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              children: [
+                Image.asset('assets/banner.png', fit: BoxFit.cover),
+                const SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Codology',
+                          style: TextStyle(
+                              fontSize: 24, fontWeight: FontWeight.bold),
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 8),
-                  const Text(
-                    '"Programming is the art of algorithm design and the craft of debugging errant code."',
-                    style: TextStyle(fontStyle: FontStyle.italic),
-                  ),
-                ],
-              ),
-            ),
-            TabBar(
-              controller: _tabController,
-              indicatorColor: Colors.blue,
-              labelColor: Colors.blue,
-              unselectedLabelColor: Colors.grey,
-              tabs: const [
-                Tab(text: 'About community'),
-                Tab(text: 'Feed'),
-                Tab(text: 'Sessions'),
-                Tab(text: 'Challenges'),
+                        SizedBox(height: 4),
+                        Row(
+                          children: [
+                            Icon(Icons.star, color: Colors.yellow),
+                            SizedBox(width: 4),
+                            Text('4.3 (10K+ members)'),
+                          ],
+                        ),
+                      ],
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const JoinCommunityPage()),
+                        );
+                      },
+                      child: const Text('Join Community'),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 8),
+                const Text(
+                  '"Programming is the art of algorithm design and the craft of debugging errant code."',
+                  style: TextStyle(fontStyle: FontStyle.italic),
+                ),
               ],
             ),
-            SizedBox(
-              height: 400, // Adjust height as necessary
-              child: TabBarView(
-                controller: _tabController,
-                children: [
-                  aboutCommunityTab(),
-                  feedTab(),
-                  sessionsTab(),
-                  challengesTab(),
-                ],
-              ),
+          ),
+          TabBar(
+            controller: _tabController,
+            indicatorColor: Colors.blue,
+            labelColor: Colors.blue,
+            unselectedLabelColor: Colors.grey,
+            tabs: const [
+              Tab(text: 'About community'),
+              Tab(text: 'Feed'),
+              Tab(text: 'Sessions'),
+              Tab(text: 'Challenges'),
+            ],
+          ),
+          Expanded(
+            child: TabBarView(
+              controller: _tabController,
+              children: [
+                aboutCommunityTab(),
+                feedTab(),
+                sessionsTab(),
+                challengesTab(),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 
   Widget aboutCommunityTab() {
-    return Padding(
+    return SingleChildScrollView(
       padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

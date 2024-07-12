@@ -9,48 +9,88 @@ class FeedSection extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Communities'),
       ),
-      body: const SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Communities',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('All communities', style: TextStyle(fontSize: 16)),
-                Text('View all',
-                    style: TextStyle(fontSize: 16, color: Colors.blue)),
+                const Text('All communities', style: TextStyle(fontSize: 16)),
+                GestureDetector(
+                  onTap: () {
+                    // Handle "View all" click
+                    print("View all clicked");
+                  },
+                  child: const Text(
+                    'View all',
+                    style: TextStyle(fontSize: 16, color: Colors.blue),
+                  ),
+                ),
               ],
             ),
-            SizedBox(height: 16),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  CommunityIcon(
-                      imagePath: 'assets/technology.jpg', label: 'Technology'),
-                  CommunityIcon(
-                      imagePath: 'assets/art_craft.jpg', label: 'Art & Craft'),
-                  CommunityIcon(
-                      imagePath: 'assets/spirituality.jpg',
-                      label: 'Spirituality'),
-                  CommunityIcon(
-                      imagePath: 'assets/codology.png', label: 'Codology'),
-                ],
-              ),
+            const SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      // Handle Technology community click
+                      print("Technology clicked");
+                    },
+                    child: const CommunityIcon(
+                        imagePath: 'assets/technology.jpg',
+                        label: 'Technology'),
+                  ),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      // Handle Art & Craft community click
+                      print("Art & Craft clicked");
+                    },
+                    child: const CommunityIcon(
+                        imagePath: 'assets/art_craft.jpg',
+                        label: 'Art & Craft'),
+                  ),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      // Handle Spirituality community click
+                      print("Spirituality clicked");
+                    },
+                    child: const CommunityIcon(
+                        imagePath: 'assets/spirituality.jpg',
+                        label: 'Spirituality'),
+                  ),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      // Handle Codology community click
+                      print("Codology clicked");
+                    },
+                    child: const CommunityIcon(
+                        imagePath: 'assets/codology.png', label: 'Codology'),
+                  ),
+                ),
+              ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             DefaultTabController(
               length: 2,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TabBar(
+                  const TabBar(
                     labelColor: Colors.blue,
                     unselectedLabelColor: Colors.black,
                     indicatorColor: Colors.blue,
@@ -60,8 +100,9 @@ class FeedSection extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: 500, // Goku san Adjust as necessary
-                    child: TabBarView(
+                    height: MediaQuery.of(context).size.height -
+                        200, // Adjust height as necessary
+                    child: const TabBarView(
                       children: [
                         MyFeedTab(),
                         Center(child: Text('My communities tab content')),
@@ -105,19 +146,22 @@ class MyFeedTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        SizedBox(height: 16),
-        PostInputField(),
-        SizedBox(height: 16),
-        PostCard(
-          community: 'Codology',
-          author: 'Aishu V',
-          department: 'Mech, CEA',
-          content:
-              'This is what I learned in my recent hackathon\n\n"The whole secret of existence"\n\n"The whole secret of existence lies in the pursuit of meaning, purpose, and connection. It is a delicate dance between self-discovery, compassion for others, and embracing the ever-unfolding mysteries of life. Finding harmony in the ebb and flow of experiences, we unlock the profound beauty that resides within our shared journey."',
-        ),
-      ],
+    return const SingleChildScrollView(
+      padding: EdgeInsets.all(16.0),
+      child: Column(
+        children: [
+          SizedBox(height: 16),
+          PostInputField(),
+          SizedBox(height: 16),
+          PostCard(
+            community: 'Codology',
+            author: 'Aishu V',
+            department: 'Mech, CEA',
+            content:
+                'This is what I learned in my recent hackathon\n\n"The whole secret of existence"\n\n"The whole secret of existence lies in the pursuit of meaning, purpose, and connection. It is a delicate dance between self-discovery, compassion for others, and embracing the ever-unfolding mysteries of life. Finding harmony in the ebb and flow of experiences, we unlock the profound beauty that resides within our shared journey."',
+          ),
+        ],
+      ),
     );
   }
 }
