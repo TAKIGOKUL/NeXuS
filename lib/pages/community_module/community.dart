@@ -44,7 +44,7 @@ class _CommunityPageState extends State<CommunityPage>
               padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
-                  Image.asset('assets/your_image.png', fit: BoxFit.cover),
+                  Image.asset('assets/banner.png', fit: BoxFit.cover),
                   const SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
