@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: const Text('Nexus'),
       ),
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
@@ -133,7 +133,7 @@ class HomeScreen extends StatelessWidget {
                     const Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
-                        'Wildlife Bootcamp',
+                        'SPROUTS Bootcamp 2.0',
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
@@ -141,7 +141,7 @@ class HomeScreen extends StatelessWidget {
                     const Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
-                        'Exploring in the wild with IEDC ...',
+                        'Exploring in with IEDC ...',
                         style: TextStyle(color: Colors.grey),
                       ),
                     ),
