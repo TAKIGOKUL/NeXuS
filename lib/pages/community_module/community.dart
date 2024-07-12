@@ -74,7 +74,12 @@ class _CommunityPageState extends State<CommunityPage>
                               builder: (context) => const JoinCommunityPage()),
                         );
                       },
-                      child: const Text('Join Community'),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue),
+                      child: const Text(
+                        'Join Community',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ],
                 ),
