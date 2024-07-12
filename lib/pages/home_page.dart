@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   static final List<Widget> _widgetOptions = <Widget>[
     const HomeScreen(),
     const CalendarScreen(),
-    const ChatScreen(),
+    const CommunityPage(),
     const FeedSection(),
   ];
 
