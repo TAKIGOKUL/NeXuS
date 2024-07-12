@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nexus/pages/chat_module/chat.dart';
 import 'package:nexus/pages/community_module/community.dart';
 import 'package:nexus/pages/events_module/calendar.dart';
 import 'package:nexus/pages/feed_section.dart';
