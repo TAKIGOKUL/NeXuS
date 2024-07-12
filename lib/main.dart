@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nexus/pages/feed_section.dart';
-import 'package:nexus/pages/login_page.dart'; // Import the feed section page
+import 'package:nexus/pages/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,8 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:
-          const LoginPage(), // Goku san to see feed section set FeedSection(),
+      home: const LoginPage(),
     );
   }
 }
