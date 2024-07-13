@@ -89,7 +89,7 @@ class LoginPage extends StatelessWidget {
                   children: [
                     IconButton(
                       icon: const Icon(Icons
-                          .mail), // Google icon but i didn't got it so used mail
+                          .mail_rounded), // Google icon but i didn't got it so used mail
                       iconSize: 30,
                       onPressed: () {},
                     ),
