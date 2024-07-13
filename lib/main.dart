@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nexus/pages/login_page.dart';
+import 'package:nexus/pages/theme/light_mode.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,9 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Nexus',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: lightMode,
       home: const LoginPage(),
     );
   }
