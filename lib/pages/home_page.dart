@@ -32,6 +32,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Nexus'),
       ),
+      drawer: _buildDrawer(context),
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -51,6 +52,78 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
+  Drawer _buildDrawer(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.blue,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CircleAvatar(
+                  radius: 30,
+                  backgroundImage: AssetImage('assets/eren.jpeg'),
+                ),
+                SizedBox(height: 10),
+                Text(
+                  'Eren Yeager',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
+                Text(
+                  'CEA Student',
+                  style: TextStyle(fontSize: 16, color: Colors.white70),
+                ),
+              ],
+            ),
+          ),
+          _buildDrawerItem(context, Icons.person, 'My Profile', '/profile'),
+          _buildDrawerItem(
+              context, Icons.chat_bubble, 'Saved Stuffs', '/saved'),
+          _buildDrawerItem(
+              context, Icons.calendar_today, 'Calendar', '/calendar'),
+          _buildDrawerItem(context, Icons.bookmark, 'Bookmark', '/bookmark'),
+          _buildDrawerItem(
+              context, Icons.contact_mail, 'Contact Us', '/contact'),
+          _buildDrawerItem(context, Icons.settings, 'Settings', '/settings'),
+          _buildDrawerItem(
+              context, Icons.help_outline, 'Helps & FAQs', '/help'),
+          _buildDrawerItem(context, Icons.exit_to_app, 'Sign Out', '/signout'),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: ElevatedButton.icon(
+              onPressed: () {},
+              icon: const Icon(Icons.upgrade),
+              label: const Text('Upgrade Pro'),
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.blue,
+                backgroundColor: Colors.lightBlue.shade100,
+                minimumSize: const Size(double.infinity, 36),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  ListTile _buildDrawerItem(
+      BuildContext context, IconData icon, String title, String routeName) {
+    return ListTile(
+      leading: Icon(icon),
+      title: Text(title),
+      onTap: () {
+        Navigator.of(context).pushNamed(routeName);
+      },
+    );
+  }
 }
 
 class HomeScreen extends StatelessWidget {
@@ -60,31 +133,37 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Row(
-            children: [
-              CircleAvatar(
-                radius: 30,
-                backgroundImage: AssetImage('assets/eren.jpeg'),
-              ),
-              SizedBox(width: 10),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Eren Yeager',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'CEA Student',
-                    style: TextStyle(fontSize: 16, color: Colors.grey),
-                  ),
-                ],
-              ),
-              Spacer(),
-              Icon(Icons.notifications, color: Colors.grey),
-            ],
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: GestureDetector(
+            onTap: () {
+              Scaffold.of(context).openDrawer();
+            },
+            child: const Row(
+              children: [
+                CircleAvatar(
+                  radius: 30,
+                  backgroundImage: AssetImage('assets/eren.jpeg'),
+                ),
+                SizedBox(width: 10),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Eren Yeager',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      'CEA Student',
+                      style: TextStyle(fontSize: 16, color: Colors.grey),
+                    ),
+                  ],
+                ),
+                Spacer(),
+                Icon(Icons.notifications, color: Colors.grey),
+              ],
+            ),
           ),
         ),
         Padding(
@@ -140,7 +219,7 @@ class HomeScreen extends StatelessWidget {
                     const Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
-                        'Exploring enterpreneurship with IEDC ...',
+                        'Exploring entrepreneurship with IEDC ...',
                         style: TextStyle(color: Colors.grey),
                       ),
                     ),
